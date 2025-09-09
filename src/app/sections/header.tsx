@@ -1,19 +1,132 @@
-import { Menu } from 'lucide-react';
+'use client';
+import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
-import React from 'react';
+import { usePathname } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
+import { cn } from '../lib/utils';
+import Link from 'next/link';
+
+//----------------------------------------------------------------------
+
+export const NAV_ITEMS = [
+  { label: 'Home', href: '/' },
+  { label: 'Features', href: '/#' },
+  { label: 'Company', href: '/#' },
+  { label: 'Feedback', href: '/#' },
+  { label: 'Blog', href: '/#' },
+] as const;
+
+//----------------------------------------------------------------------
 
 const Header = () => {
+  const [showMobileNav, setShowMobileNav] = useState(false);
+
+  // Close mobile nav when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (showMobileNav && !target.closest('.mobile-nav-container')) {
+        setShowMobileNav(false);
+      }
+    };
+
+    if (showMobileNav) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showMobileNav]);
+
+  //----------------------------------------
+
   return (
-    <div className=" flex items-center justify-between p-[13px] border-b border-white/15">
+    <header className=" relative flex items-center justify-between p-[13px] border-b border-white/15">
       <div className=" flex items-center gap-2">
         <Image src="/logo.svg" alt="Rankly Logo" width={38} height={38} />
         <p className=" font-semibold text-lg">Rankly</p>
       </div>
-      <button className=" p-1 rounded-sm cursor-pointer text-purple-5 bg-[#262626]">
-        <Menu size={22} />
+
+      <button
+        onClick={() => setShowMobileNav((prev) => !prev)}
+        className=" p-1 rounded-sm cursor-pointer text-purple-5 bg-[#262626]"
+      >
+        {!showMobileNav ? <Menu size={22} /> : <X size={22} />}
       </button>
-    </div>
+
+      <MobileNav
+        isOpen={showMobileNav}
+        onClose={() => setShowMobileNav(false)}
+      />
+    </header>
   );
 };
 
 export default Header;
+
+//----------------------------------------------------------------------
+// CHILD COMPONENTS
+//----------------------------------------------------------------------
+
+const MobileNav = ({
+  isOpen,
+  onClose,
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+}) => {
+  const pathname = usePathname();
+
+  // Handle mobile nav item click
+
+  return (
+    <>
+      {/* Mobile Navigation Menu */}
+      <div
+        className={cn(
+          'mobile-nav-container min-h-screen bg-background/30 border-white/30 fixed right-0 left-0 z-50 border-b backdrop-blur-xl transition-all duration-500 ease-out lg:hidden',
+          isOpen
+            ? 'top-[72px] translate-y-0 opacity-100 md:top-[80px]'
+            : 'pointer-events-none top-[72px] -translate-y-full opacity-0 md:top-[80px]'
+        )}
+      >
+        <nav className="  ml-auto px-4 py-6">
+          <div className="flex flex-col space-y-1">
+            {NAV_ITEMS.map((item) => {
+              const isActive = pathname === item.href;
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    'flex items-center rounded-lg px-4 py-3 text-base transition-colors duration-200',
+                    'hover:bg-white/10 active:bg-white/15',
+                    isActive
+                      ? 'bg-white/10 font-semibold text-white'
+                      : 'text-gray-300 hover:text-white'
+                  )}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+
+            {/* Mobile Contact Button */}
+            <div className="border-white/30  pt-3">
+              <button
+                onClick={onClose}
+                className=" border backdrop-blur-xl bg-background/30 border-white/30 rounded-xl w-full p-2 text-center"
+              >
+                <div className="inner-shadow font-normal rounded-lg bg-purple-10/30 backdrop-blur-xl py-1.5 flex items-center justify-center">
+                  Join waitlist
+                </div>
+              </button>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </>
+  );
+};

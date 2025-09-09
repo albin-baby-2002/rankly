@@ -1,17 +1,34 @@
 @import 'tailwindcss';
 
 @theme {
+  --breakpoint-xs:340px;
   --color-background: #020103;
   --color-foreground: #ffff;
 
   --color-purple-5: #c09ff4;
   --color-purple-10: #8c45ff;
+  --color-purple-15: #9855ff;
 }
 
 body {
   background: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-inter);
+}
+
+.gradient-1 {
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #ffffff 42%,
+    #b372cf 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.inner-shadow {
+  box-shadow: inset 0 0 6px 3px rgba(255, 255, 255, 0.25);
 }
 
 .contained {
