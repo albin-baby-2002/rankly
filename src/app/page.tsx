@@ -7,9 +7,9 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className=" max-w-screen overflow-hidden">
+      <main className=" max-w-screen overflow-x-hidden">
         <HeroSection />
-        <div className=' contained'>
+        <div className=' contained overflow-hidden'>
           <TrustedBy />
           <PowerOfAI/>
         </div>
