@@ -42,9 +42,19 @@ const Header = () => {
   //----------------------------------------
 
   return (
-    <header className=" relative flex items-center justify-between p-[13px] border-b border-white/15">
+    <header className=" contained relative flex items-center justify-between p-[13px] border-b border-white/15">
       <div className=" flex items-center gap-2">
-        <Image src="/logo.svg" alt="Rankly Logo" width={38} height={38} />
+
+        <Image
+          priority
+          loading="eager"
+          unoptimized
+          src="/logo.svg"
+          alt="Rankly Logo"
+          width={38}
+          height={38}
+        />
+
         <p className=" font-semibold text-lg">Rankly</p>
       </div>
 
@@ -98,7 +108,7 @@ const MobileNav = ({
 
               return (
                 <Link
-                  key={item.href}
+                  key={item.label}
                   href={item.href}
                   className={cn(
                     'flex items-center rounded-lg px-4 py-3 text-base transition-colors duration-200',
@@ -119,7 +129,7 @@ const MobileNav = ({
                 onClick={onClose}
                 className=" border backdrop-blur-xl bg-background/30 border-white/30 rounded-xl w-full p-2 text-center"
               >
-                <div className="inner-shadow font-normal rounded-lg bg-purple-10/30 backdrop-blur-xl py-1.5 flex items-center justify-center">
+                <div className="inner-shadow font-normal rounded-lg bg-purple-10/40 backdrop-blur-xl py-1.5 flex items-center justify-center">
                   Join waitlist
                 </div>
               </button>

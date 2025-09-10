@@ -1,13 +1,17 @@
 @import 'tailwindcss';
 
 @theme {
-  --breakpoint-xs:340px;
+  --breakpoint-xs: 340px;
   --color-background: #020103;
   --color-foreground: #ffff;
 
   --color-purple-5: #c09ff4;
   --color-purple-10: #8c45ff;
   --color-purple-15: #9855ff;
+
+  --color-hero-stop1: #0d0718;
+  --color-hero-stop2: #0f081b;
+  --color-hero-stop3: #0b0614;
 }
 
 body {
@@ -16,13 +20,13 @@ body {
   font-family: var(--font-inter);
 }
 
+.hero-img-box-shadow {
+  box-shadow: 0 -20px 70px 0 rgba(140, 69, 255, 0.25),
+    0 -19px 70px 0 rgba(140, 69, 255, 0.4);
+}
+
 .gradient-1 {
-  background: linear-gradient(
-    to bottom,
-    #ffffff 0%,
-    #ffffff 42%,
-    #b372cf 100%
-  );
+  background: linear-gradient(to bottom, #ffffff 0%, #ffffff 42%, #b372cf 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -33,4 +37,8 @@ body {
 
 .contained {
   @apply max-w-[1200px] mx-auto overflow-x-clip;
+}
+
+.hero-ellipse {
+  @apply animate-[spin_60s_linear_infinite] rounded-full  aspect-square   top-1/2 border-dashed -translate-y-1/2   border border-inherit  absolute -translate-x-1/2 left-1/2;
 }
