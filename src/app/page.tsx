@@ -1,5 +1,7 @@
+import ElevateSeo from './sections/elevate-seo';
 import Header from './sections/header';
 import HeroSection from './sections/hero-section';
+import OurClients from './sections/our-clients';
 import PowerOfAI from './sections/power-of-ai';
 import TrustedBy from './sections/trusted-by';
 
@@ -12,6 +14,8 @@ export default function Home() {
         <div className=' contained overflow-hidden'>
           <TrustedBy />
           <PowerOfAI/>
+          <ElevateSeo/>
+          <OurClients/>
         </div>
       </main>
     </>

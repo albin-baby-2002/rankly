@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
   --breakpoint-xs: 340px;
@@ -21,7 +21,8 @@ body {
 }
 
 .hero-img-box-shadow {
-  box-shadow: 0 -20px 70px 0 rgba(140, 69, 255, 0.25),
+  box-shadow:
+    0 -20px 70px 0 rgba(140, 69, 255, 0.25),
     0 -19px 70px 0 rgba(140, 69, 255, 0.4);
 }
 
@@ -31,14 +32,34 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.client-line-gradient {
+  background: linear-gradient(
+    to right,
+    #141315 0%,
+    #ffffff 17%,
+    #ffffff 87%,
+    #020103 100%
+  );
+}
+
+.client-line-gradient-2 {
+  background: linear-gradient(
+    to bottom,
+    #141315 0%,
+    #ffffff 17%,
+    #ffffff 87%,
+    #020103 100%
+  );
+}
+
 .inner-shadow {
   box-shadow: inset 0 0 6px 3px rgba(255, 255, 255, 0.25);
 }
 
 .contained {
-  @apply max-w-[1200px] mx-auto overflow-x-clip;
+  @apply mx-auto max-w-[1200px] overflow-x-clip;
 }
 
 .hero-ellipse {
-  @apply animate-[spin_60s_linear_infinite] rounded-full  aspect-square   top-1/2 border-dashed -translate-y-1/2   border border-inherit  absolute -translate-x-1/2 left-1/2;
+  @apply absolute top-1/2 left-1/2 aspect-square -translate-x-1/2 -translate-y-1/2 animate-[spin_60s_linear_infinite] rounded-full border border-dashed border-inherit;
 }
