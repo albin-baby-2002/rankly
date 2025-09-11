@@ -21,11 +21,26 @@ const OurClients = () => {
         />
         <div className="client-line-gradient absolute left-1/2 h-[1px] w-[160%] -translate-x-1/2 bg-white" />
 
-        <div className="client-line-gradient absolute left-1/2 top-0 h-[1px] w-[160%] -translate-x-1/2 bg-white" />
+        <div className="client-line-gradient absolute top-0 left-1/2 h-[1px] w-[160%] -translate-x-1/2 bg-white" />
 
-        <div className="client-line-gradient-2 absolute left-0 top-1/2 w-[1px] h-[140%] -translate-y-1/2 bg-white" />
+        <div className="client-line-gradient-2 absolute top-1/2 left-0 h-[140%] w-[1px] -translate-y-1/2 bg-white" />
 
-        <div className="client-line-gradient-2 absolute right-0 top-1/2 w-[1px] h-[140%] -translate-y-1/2 bg-white" />
+        <div className="client-line-gradient-2 absolute top-1/2 right-0 h-[140%] w-[1px] -translate-y-1/2 bg-white" />
+
+        <div className="absolute top-8 left-1/2 h-[234px] w-[312px] -translate-x-1/2 rounded-full bg-[#8C45FF]/50 blur-[100px]" />
+      </div>
+
+      <div className="flex flex-col items-center gap-5">
+        <p className="max-w-[90%] text-[20px] leading-[26px] font-medium">
+          ”This product has completely transformed how I manage my projects and
+          deadlines”
+        </p>
+        <div>
+          <p>Talia Taylor</p>
+          <p className="text-sm text-white/70">
+            Digital Marketing Director @ Quantum
+          </p>
+        </div>
       </div>
     </div>
   );

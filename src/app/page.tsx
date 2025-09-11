@@ -3,6 +3,7 @@ import Header from './sections/header';
 import HeroSection from './sections/hero-section';
 import OurClients from './sections/our-clients';
 import PowerOfAI from './sections/power-of-ai';
+import Pricing from './sections/pricing';
 import TrustedBy from './sections/trusted-by';
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
           <PowerOfAI/>
           <ElevateSeo/>
           <OurClients/>
+          <Pricing/>
         </div>
       </main>
     </>
