@@ -34,7 +34,7 @@ const HeroSection = () => {
       </div>
 
       <div className="relative mt-[50px] overflow-y-visible pt-2 pb-[50px] lg:mt-[30px] md:max-w-[90%] md:pb-0">
-        <div className="hero-img-box-shadow contained from-hero-stop1 via-hero-stop2/0 to-hero-stop3 mx-4 overflow-hidden rounded-[30px] border border-white/10 bg-gradient-to-b via-48% p-1 md:mx-6 md:max-h-[300px] lg:max-h-[600px]">
+        <div className="hero-img-box-shadow contained from-hero-stop1 via-hero-stop2/0 to-hero-stop3 mx-4 overflow-hidden rounded-[30px] border border-white/10 bg-gradient-to-b via-48% p-1 md:mx-6 md:max-h-[300px] lg:max-h-[600px] xl:max-h-[650px]">
           <Image
             priority
             loading="eager"
