@@ -1,6 +1,8 @@
 import ElevateSeo from './sections/elevate-seo';
+import Footer from './sections/footer';
 import Header from './sections/header';
 import HeroSection from './sections/hero-section';
+import JoinWaitlist from './sections/join-waitlist';
 import OurClients from './sections/our-clients';
 import PowerOfAI from './sections/power-of-ai';
 import Pricing from './sections/pricing';
@@ -18,8 +20,10 @@ export default function Home() {
           <ElevateSeo/>
           <OurClients/>
           <Pricing/>
+          <JoinWaitlist/>
         </div>
       </main>
+      <Footer/>
     </>
   );
 }

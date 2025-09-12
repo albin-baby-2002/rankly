@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { cn } from '../lib/utils';
 import Link from 'next/link';
+import Logo from '../components/logo';
 
 //----------------------------------------------------------------------
 
@@ -43,20 +44,7 @@ const Header = () => {
 
   return (
     <header className=" contained relative flex items-center justify-between p-[13px] border-b border-white/15">
-      <div className=" flex items-center gap-2">
-
-        <Image
-          priority
-          loading="eager"
-          unoptimized
-          src="/logo.svg"
-          alt="Rankly Logo"
-          width={38}
-          height={38}
-        />
-
-        <p className=" font-semibold text-lg">Rankly</p>
-      </div>
+      <Logo/>
 
       <button
         onClick={() => setShowMobileNav((prev) => !prev)}
