@@ -43,14 +43,32 @@ const Header = () => {
   //----------------------------------------
 
   return (
-    <header className="bg-background contained relative flex items-center justify-between border-b border-white/15 p-[13px] lg:border-b-0">
+    <header className="bg-background lg:gap-[40px] xl:gap-[74px] contained relative flex items-center justify-between gap-[34px] border-b border-white/15 p-[13px] lg:w-max lg:border-b-0">
       <Logo />
 
       <button
         onClick={() => setShowMobileNav((prev) => !prev)}
-        className="text-purple-5 cursor-pointer rounded-sm bg-[#262626] p-1"
+        className="text-purple-5 cursor-pointer rounded-sm bg-[#262626] p-1 md:p-1.5 lg:hidden"
       >
-        {!showMobileNav ? <Menu size={22} /> : <X size={22} />}
+        {!showMobileNav ? (
+          <Menu className="size-[22px] md:size-[24px]" />
+        ) : (
+          <X size={22} />
+        )}
+      </button>
+
+      <div className="border hidden lg:flex leading-[26px] space-x-[30px] px-10 h-full text-white/60 border-white/15 py-3 rounded-full">
+        <p>Features</p>
+        <p>Developers</p>
+        <p>Company</p>
+        <p>Blog</p>
+        <p>Changelog</p>
+      </div>
+
+      <button className="bg-background/30 hidden lg:block w-max rounded-xl border border-white/30 p-2 text-center backdrop-blur-xl">
+        <div className="inner-shadow bg-purple-10/40 flex items-center justify-center rounded-lg px-5 py-1.5 font-normal backdrop-blur-xl">
+          Join waitlist
+        </div>
       </button>
 
       <MobileNav

@@ -12,9 +12,10 @@ const Logo = () => {
         alt="Rankly Logo"
         width={38}
         height={38}
+        className=" md:size-[41px]"
       />
 
-      <p className="text-lg font-semibold">Rankly</p>
+      <p className="text-lg md:text-[20px] font-semibold">Rankly</p>
     </div>
   );
 };
