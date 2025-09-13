@@ -33,11 +33,12 @@ body {
 }
 
 .client-line-gradient {
+  opacity: .9;
   background: linear-gradient(
     to right,
     #141315 0%,
-    #ffffff 17%,
-    #ffffff 87%,
+    #ebeaea 17%,
+    #cdcdcd 87%,
     #020103 100%
   );
 }
@@ -61,11 +62,7 @@ body {
 }
 
 .pricing-gradient {
-  background: radial-gradient(
-    #020103 0%,
-    #55299d53 15%,
-    #020103 75%
-  );
+  background: radial-gradient(#020103 0%, #55299d53 15%, #020103 75%);
 }
 
 .contained {

@@ -47,23 +47,25 @@ const DATA = [
 
 const ElevateSeo = () => {
   return (
-    <div className="flex flex-col bg-gradient-to-r from-[#190D2E] to-[#020103] justify-center gap-[40px] px-[40px] py-[70px]">
-      <p className="text-[26px] font-medium">Elevate your SEO efforts.</p>
+    <div className="flex flex-col justify-center gap-[40px] bg-gradient-to-r from-[#190D2E] to-[#020103] px-[40px] py-[70px]">
+      <p className="text-[26px] leading-[65px] font-medium sm:text-[36px] md:max-w-[50%] md:text-[50px] lg:max-w-[40%] xl:max-w-[35%]">
+        Elevate your SEO efforts.
+      </p>
 
-      <div className="w-full space-y-10">
+      <div className="grid w-full space-y-10 md:grid-cols-2 md:gap-10 md:space-y-0 lg:grid-cols-3">
         {DATA.map((item, idx) => {
           return (
             <div className="space-y-[10px]" key={item.feature}>
-              <div className=" flex items-center gap-2">
+              <div className="flex items-center gap-2">
                 <Image
                   src={`/elevate-seo/evs-${idx + 1}.svg`}
                   width={16}
                   height={17}
                   alt={item.feature}
                 />
-                <p className=" font-medium">{item.feature}</p>
+                <p className="font-medium">{item.feature}</p>
               </div>
-              <p className=" text-white/70 leading-[26px]">{item.description}</p>
+              <p className="leading-[26px] text-white/70">{item.description}</p>
             </div>
           );
         })}
