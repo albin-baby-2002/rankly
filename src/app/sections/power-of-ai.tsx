@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 
 const subHeadClassName =
-  " font-medium sm:text-center sm:text-lg md:text-base  md:text-start leading-[31px] z-10";
+  " font-medium sm:text-center sm:text-lg md:text-base md:text-start leading-[31px] z-10";
 
 const descriptionClassName =
   " text-white/70 z-10 sm:text-center sm:text-lg md:text-base :text-lg md:text-start md:max-w-[300px]";
@@ -14,7 +14,7 @@ const descriptionClassName2 =
 
 const PowerOfAI = () => {
   return (
-    <div className="flex flex-col items-center justify-center gap-[31px] px-3 py-[80px] md:px-6">
+    <div className="flex flex-col items-center xl:px-0 justify-center gap-[31px] px-3 py-[80px] md:px-6">
       <h2 className="max-w-[90%] text-center text-[26px] leading-[38px] font-medium md:max-w-[75%] md:pb-10 md:text-[32px] lg:max-w-[50%]">
         Harness the power of AI, making search engine optimization intuitive and
         effective for all skill levels.
@@ -36,7 +36,7 @@ const PowerOfAI = () => {
           </div>
         </div>
 
-        <div className="xs:min-h-[400px] relative flex min-h-[370px] w-full flex-col justify-end overflow-hidden rounded-[10px] bg-gradient-to-b from-[#000] to-[#371866] p-[30px] md:p-[20px] sm:min-h-[500px] md:min-h-[400px]">
+        <div className="xs:min-h-[400px] relative flex min-h-[370px] w-full flex-col justify-end overflow-hidden rounded-[10px] bg-gradient-to-b from-[#000] to-[#371866] p-[30px] sm:min-h-[500px] md:min-h-[400px] md:p-[20px]">
           <Image
             unoptimized
             src={`/power-of-ai/product-1.avif`}
@@ -57,7 +57,7 @@ const PowerOfAI = () => {
       </div>
 
       <div className="grid w-full items-center gap-[10px] md:grid-cols-[1fr_254px] lg:grid-cols-[1fr_346px]">
-        <div className="xs:min-h-[400px] relative flex min-h-[370px] w-full flex-col justify-end  overflow-hidden rounded-[10px] bg-gradient-to-b from-[#000] to-[#371866] p-[30px] md:p-[20px] sm:min-h-[500px] md:min-h-[400px]">
+        <div className="xs:min-h-[400px] relative flex min-h-[370px] w-full flex-col justify-end overflow-hidden rounded-[10px] bg-gradient-to-b from-[#000] to-[#371866] p-[30px] sm:min-h-[500px] md:min-h-[400px] md:p-[20px]">
           <Image
             unoptimized
             src={`/power-of-ai/product-2.avif`}

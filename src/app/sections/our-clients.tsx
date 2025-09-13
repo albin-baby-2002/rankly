@@ -3,7 +3,7 @@ import React from "react";
 
 const OurClients = () => {
   return (
-    <div className="flex flex-col items-center justify-center py-[50px] overflow-clip md:pb-[80px] lg:pt-[70px] lg:pb-[100px] text-center">
+    <div className="flex flex-col items-center justify-center overflow-clip py-[50px] text-center md:pb-[80px] lg:pt-[70px] lg:pb-[100px]">
       <div className="space-y-[10px]">
         <p className="text-[26px] leading-[65px] font-medium sm:text-[36px] md:text-[50px]">
           Our Clients
@@ -13,8 +13,8 @@ const OurClients = () => {
           like you.
         </p>
       </div>
-      <div className="m-10 flex flex-col items-center gap-10 md:mx-auto md:mt-25 md:flex-row md:relative md:justify-center md:gap-[20px] lg:gap-10">
-        <div className="absolute top-5 left-1/2 hidden h-[234px] w-[312px] -translate-x-1/2 rounded-full bg-[#8C45FF]/50 blur-[110px] lg:left-0 lg:-translate-x-5 md:block" />
+      <div className="m-10 flex flex-col items-center gap-10 md:relative md:mx-auto md:mt-25 md:flex-row md:justify-center md:gap-[20px] lg:gap-10">
+        <div className="absolute top-5 left-1/2 hidden h-[234px] w-[312px] -translate-x-1/2 rounded-full bg-[#8C45FF]/50 blur-[110px] md:block lg:left-0 lg:-translate-x-5" />
         <div className="relative">
           <Image
             className="size-[171px] md:size-[180px] lg:size-[234px]"
@@ -23,7 +23,7 @@ const OurClients = () => {
             height={684}
             alt="Client Logo"
           />
-          <div className="client-line-gradient absolute left-1/2 h-[1px] w-[160%] -translate-x-1/2 md:-left-[120px] md:w-[800px]  md:translate-x-0 lg:w-[900px] xl:w-[1000px]" />
+          <div className="client-line-gradient absolute left-1/2 h-[1px] w-[160%] -translate-x-1/2 md:-left-[120px] md:w-[800px] md:translate-x-0 lg:w-[900px] xl:w-[1000px]" />
 
           <div className="client-line-gradient absolute top-0 left-1/2 h-[1px] w-[160%] -translate-x-1/2 md:-left-[120px] md:w-[800px] md:translate-x-0 lg:w-[900px] xl:w-[1000px]" />
 

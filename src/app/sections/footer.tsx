@@ -23,8 +23,8 @@ const DATA = [
 
 const Footer = () => {
   return (
-    <footer className="xs:p-10 p-5 space-y-10">
-      <div className="flex items-center justify-between">
+    <footer className= " contained xs:p-10 p-5 space-y-10 md:flex md:justify-between ">
+      <div className="flex items-center md:flex-col justify-between">
         <Logo />
         <div className="flex items-center gap-3">
           <Image
@@ -45,7 +45,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className=" grid grid-cols-2 space-y-10 pl-2">
+      <div className=" grid grid-cols-2 md:grid-cols-4 md:gap-10 space-y-10 pl-2">
         {DATA.map((item) => (
           <div key={item.title}>
             <h4>{item.title}</h4>
