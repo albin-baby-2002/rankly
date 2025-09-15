@@ -1,5 +1,7 @@
+"use client"
 import Image from "next/image";
 import React from "react";
+import {motion} from 'motion/react'
 
 const HeroSection = () => {
   return (
@@ -18,6 +20,8 @@ const HeroSection = () => {
 
       <div className="mt-3 flex flex-col items-center justify-center space-y-[16px] text-center">
         <div className="xs:text-[42px] gradient-1 flex flex-col bg-clip-text text-[38px] leading-[52px] font-medium text-transparent sm:text-[48px] md:text-[75px] lg:text-[82px] md:leading-[88px] lg:leading-[98px]">
+
+
           <span>Boost your </span>
           <span>rankings with AI.</span>
         </div>
@@ -63,7 +67,7 @@ const HeroSection = () => {
                 />
               </div>
             </div>
-            <div className="hero-ellipse w-[100%] rotate-[80deg]">
+            <div className="hero-ellipse w-[100%] rotate-[80deg] lg:rotate-[40deg]">
               <div className="relative h-full w-full">
                 <Image
                   priority
@@ -78,7 +82,7 @@ const HeroSection = () => {
               </div>
             </div>
             <div className="hero-ellipse w-[130%]">
-              <div className="relative h-full w-full rotate-[240deg]">
+              <div className="relative h-full w-full rotate-[240deg] lg:rotate-[300deg]">
                 <Image
                   priority
                   loading="eager"
