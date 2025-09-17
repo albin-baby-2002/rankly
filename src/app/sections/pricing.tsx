@@ -1,20 +1,30 @@
+"use client";
 import { Check } from "lucide-react";
 import React from "react";
+import { motion } from "motion/react";
 
 const Pricing = () => {
   return (
     <div className="relative flex flex-col items-center gap-[40px] py-[40px]">
-      <div className="pricing-gradient absolute top-1/2 left-1/2  h-[90%] w-[90%] -translate-x-1/2 -translate-y-1/2 -z-[1]" />
-      <div className="flex flex-col items-center md:space-y-7 space-y-2.5">
-        <p className="text-[26px] sm:text-[36px] md:text-[50px] leading-[65px] font-medium">Pricing</p>
-        <p className="max-w-[80%] text-center text-[18px] md:text-[20px] md:max-w-[60%] sm:max-w-[70%] leading-[31px]">
+      <div className="pricing-gradient absolute top-1/2 left-1/2 -z-[1] h-[90%] w-[90%] -translate-x-1/2 -translate-y-1/2" />
+      <div className="flex flex-col items-center space-y-2.5 md:space-y-7">
+        <p className="text-[26px] leading-[65px] font-medium sm:text-[36px] md:text-[50px]">
+          Pricing
+        </p>
+        <p className="max-w-[80%] text-center text-[18px] leading-[31px] sm:max-w-[70%] md:max-w-[60%] md:text-[20px]">
           Choose the right plan to meet your SEO needs and start optimizing
           today.
         </p>
       </div>
 
-      <div className="w-full md:gap-2 md:max-w-[941px] md:px-4 space-y-[10px] md:space-y-0 md:grid grid-cols-3  ">
-        <div className="mx-auto flex h-[500px] md:h-[530px] w-[80%] md:w-full max-w-[400px] flex-col justify-between rounded-[10px] border border-white/15 p-4">
+      <div className="w-full grid-cols-3 space-y-[10px] md:grid md:max-w-[941px] md:gap-2 md:space-y-0 md:px-4">
+        <motion.div
+          initial={{ opacity: 0, translateY: 30 }}
+          whileInView={{ opacity: 1, translateY: 0 }}
+          transition={{ duration: 1, delay: 0.6 }}
+          viewport={{ once: true }}
+          className="mx-auto flex h-[500px] w-[80%] max-w-[400px] flex-col justify-between rounded-[10px] border border-white/15 p-4 md:h-[530px] md:w-full"
+        >
           <div className="flex flex-col">
             <div className="flex flex-col gap-2 border-b border-white/30 pb-6">
               <p className="text-[24px] leading-[31px] font-medium">Basic</p>
@@ -49,10 +59,16 @@ const Pricing = () => {
               Join waitlist
             </div>
           </button>
-        </div>
+        </motion.div>
 
-        <div className="pro-pricing-shadow md:w-full md:h-[530px] relative mx-auto flex h-[500px] w-[80%] max-w-[400px] flex-col justify-between rounded-[10px] border-white/15 bg-gradient-to-b from-[#010002] to-[#361764] p-4">
-          <div className="absolute top-0 rounded-[10px] right-0 bottom-0 left-0 bg-[linear-gradient(to_right,#606060_1px,transparent_1px),linear-gradient(to_bottom,#606060_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_100%,#000_80%,transparent_100%)] opacity-70 bg-[size:45px_60px]"></div>
+        <motion.div
+          initial={{ opacity: 0, translateY: 30 }}
+          whileInView={{ opacity: 1, translateY: 0 }}
+          transition={{ duration: 1, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="pro-pricing-shadow relative mx-auto flex h-[500px] w-[80%] max-w-[400px] flex-col justify-between rounded-[10px] border-white/15 bg-gradient-to-b from-[#010002] to-[#361764] p-4 md:h-[530px] md:w-full"
+        >
+          <div className="absolute top-0 right-0 bottom-0 left-0 rounded-[10px] bg-[linear-gradient(to_right,#606060_1px,transparent_1px),linear-gradient(to_bottom,#606060_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_100%,#000_80%,transparent_100%)] bg-[size:45px_60px] opacity-70"></div>
 
           <div className="flex flex-col">
             <div className="flex flex-col gap-2 border-b border-white/30 pb-6">
@@ -98,9 +114,15 @@ const Pricing = () => {
               Join waitlist
             </div>
           </button>
-        </div>
+        </motion.div>
 
-        <div className="mx-auto md:w-full md:h-[530px] flex h-[500px] w-[80%] max-w-[400px] flex-col justify-between rounded-[10px] border border-white/15 p-4">
+        <motion.div
+
+          initial={{ opacity: 0, translateY: 30 }}
+          whileInView={{ opacity: 1, translateY: 0 }}
+          transition={{ duration: 1, delay: 0.6 }}
+          viewport={{ once: true }}
+        className="mx-auto flex h-[500px] w-[80%] max-w-[400px] flex-col justify-between rounded-[10px] border border-white/15 p-4 md:h-[530px] md:w-full">
           <div className="flex flex-col">
             <div className="flex flex-col gap-2 border-b border-white/30 pb-6">
               <p className="text-[24px] leading-[31px] font-medium">Business</p>
@@ -155,7 +177,7 @@ const Pricing = () => {
               Join waitlist
             </div>
           </button>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
