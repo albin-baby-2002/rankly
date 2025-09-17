@@ -1,4 +1,6 @@
+"use client"
 import Image from "next/image";
+import {motion} from 'motion/react'
 import React from "react";
 
 const DATA = [
@@ -55,7 +57,13 @@ const ElevateSeo = () => {
       <div className="grid w-full space-y-10 md:grid-cols-2 md:gap-10 md:space-y-0 lg:grid-cols-3">
         {DATA.map((item, idx) => {
           return (
-            <div className="space-y-[10px]" key={item.feature}>
+            <motion.div
+
+                initial={{ opacity: 0, translateY: 30 }}
+                whileInView={{ opacity: 1, translateY: 0 }}
+                transition={{ duration: .5, delay: 0.1 * idx }}
+                viewport={{ once: true }}
+            className="space-y-[10px]" key={item.feature}>
               <div className="flex items-center gap-2">
                 <Image
                   src={`/elevate-seo/evs-${idx + 1}.svg`}
@@ -66,7 +74,7 @@ const ElevateSeo = () => {
                 <p className="font-medium">{item.feature}</p>
               </div>
               <p className="leading-[26px] text-white/70">{item.description}</p>
-            </div>
+            </motion.div>
           );
         })}
       </div>

@@ -1,20 +1,36 @@
-import Image from 'next/image';
-import React from 'react';
+"use client";
+import Image from "next/image";
+import React from "react";
+import { motion } from "motion/react";
 
 const TrustedBy = () => {
   return (
-    <div className="md:px-6 bg-background px-3 py-7 md:py-[54px] flex items-center flex-col justify-center gap-10">
-      <p className=' text-center leading-[26px] md:text-[18px] text-white/70'>Trusted by the world’s most innovative teams</p>
-      <div className=' grid grid-cols-2 w-full max-w-[970px]   md:grid-cols-4 gap-[10px]'>
+    <div className="bg-background flex flex-col items-center justify-center gap-10 px-3 py-7 md:px-6 md:py-[54px]">
+      <motion.p
+        initial={{ opacity: 0, translateY: 30 }}
+        whileInView={{ opacity: 1, translateY: 0 }}
+        transition={{ duration: 1, delay: 0.1 }}
+        className="text-center leading-[26px] text-white/70 md:text-[18px]"
+      >
+        Trusted by the world’s most innovative teams
+      </motion.p>
+      <div className="grid w-full max-w-[970px] grid-cols-2 gap-[10px] md:grid-cols-4">
         {new Array(8).fill(0).map((_, index) => (
-          <div key={index} className="flex justify-center border border-white/15 rounded-[10px] py-[30px] px-3 sm:py-[40px] items-center">
+          <motion.div
+            initial={{ opacity: 0, translateY: 30 }}
+            whileInView={{ opacity: 1, translateY: 0 }}
+            transition={{ duration: 1, delay: 0.1 * index }}
+            viewport={{once:true}}
+            key={index}
+            className="flex items-center justify-center rounded-[10px] border border-white/15 px-3 py-[30px] sm:py-[40px]"
+          >
             <Image
               src={`/trusted-by/tr-by-${index + 1}.svg`}
               width={155}
               height={34}
               alt={`Trusted by ${index + 1}`}
             />
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

@@ -1,5 +1,7 @@
+"use client"
 import Image from "next/image";
 import React from "react";
+import {motion} from 'motion/react'
 
 const subHeadClassName =
   " font-medium sm:text-center sm:text-lg md:text-base md:text-start leading-[31px] z-10";
@@ -14,10 +16,23 @@ const descriptionClassName2 =
 
 const PowerOfAI = () => {
   return (
-    <div className="flex flex-col items-center xl:px-0 justify-center gap-[31px] px-3 py-[80px] md:px-6">
+    <div className="flex flex-col items-center justify-center gap-[31px] px-3 py-[80px] md:px-6 xl:px-0">
       <h2 className="max-w-[90%] text-center text-[26px] leading-[38px] font-medium md:max-w-[75%] md:pb-10 md:text-[32px] lg:max-w-[50%]">
-        Harness the power of AI, making search engine optimization intuitive and
-        effective for all skill levels.
+        {" Harness the power of AI, making search engine optimization intuitive and effective for all skill levels."
+          .split("")
+          .map((item, idx) => {
+            return (
+              <motion.span
+                key={idx}
+                initial={{ opacity: 0, translateY: 30 }}
+                whileInView={{ opacity: 1, translateY: 0 }}
+                transition={{ duration: .5, delay: 0.05 * idx }}
+                viewport={{ once: true }}
+              >
+                {item}
+              </motion.span>
+            );
+          })}
       </h2>
       <div className="grid w-full items-center gap-[10px] md:grid-cols-[254px_1fr] lg:grid-cols-[346px_1fr]">
         <div className="flex w-full flex-col space-y-[14px] rounded-[10px] border border-white/15 p-[30px] sm:items-center md:h-[400px] md:items-start md:justify-between md:p-[20px]">
